@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - ChordCraft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0e1a;
+            --surface: #1a1830;
+            --gold: #d4a843;
+            --gold-dim: rgba(212, 168, 67, 0.15);
+            --text: #e0dde8;
+            --text-muted: #9994b0;
+            --border: rgba(212, 168, 67, 0.2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            min-height: 100vh;
+        }
+
+        .grain {
+            position: fixed;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 3.5rem 1.5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        header .app-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--gold);
+            letter-spacing: 0.04em;
+            margin-bottom: 0.25rem;
+        }
+
+        header h1 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        main {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .updated {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        section p {
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .contact-link {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gold-dim);
+            transition: border-color 0.2s;
+        }
+        .contact-link:hover {
+            border-bottom-color: var(--gold);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 1;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="grain"></div>
+
+    <header>
+        <div class="app-name">ChordCraft</div>
+        <h1>Privacy Policy</h1>
+    </header>
+
+    <main>
+        <p class="updated">Last updated: April 2026</p>
+
+        <section>
+            <h2>1. Data Collection</h2>
+            <p>ChordCraft does not collect, store, or transmit any personal data. All audio recordings and generated data are processed and stored locally on your device only.</p>
+        </section>
+
+        <section>
+            <h2>2. Microphone Usage</h2>
+            <p>ChordCraft requires microphone access solely for recording musical instrument input. Audio data is processed on-device for pitch detection and is never sent to external servers.</p>
+        </section>
+
+        <section>
+            <h2>3. Purchases</h2>
+            <p>In-app purchases are processed by Apple through the App Store. We do not have access to your payment information.</p>
+        </section>
+
+        <section>
+            <h2>4. Analytics</h2>
+            <p>ChordCraft does not use any third-party analytics or tracking services.</p>
+        </section>
+
+        <section>
+            <h2>5. Children's Privacy</h2>
+            <p>ChordCraft does not knowingly collect any information from children.</p>
+        </section>
+
+        <section>
+            <h2>6. Changes</h2>
+            <p>We may update this policy from time to time. Changes will be posted on this page.</p>
+        </section>
+
+        <section>
+            <h2>7. Contact</h2>
+            <p>If you have any questions, please contact us at <a class="contact-link" href="mailto:contact@kouworks.jp">contact@kouworks.jp</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 <a href="https://kouworks.jp">kouworks</a></p>
+    </footer>
+</body>
+</html>

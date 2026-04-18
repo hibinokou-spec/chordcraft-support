@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - ChordCraft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0e1a;
+            --surface: #1a1830;
+            --gold: #d4a843;
+            --gold-dim: rgba(212, 168, 67, 0.15);
+            --text: #e0dde8;
+            --text-muted: #9994b0;
+            --border: rgba(212, 168, 67, 0.2);
+            --accent-purple: #7c6ceb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            min-height: 100vh;
+        }
+
+        .grain {
+            position: fixed;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 3.5rem 1.5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        header .app-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--gold);
+            letter-spacing: 0.04em;
+            margin-bottom: 0.25rem;
+        }
+
+        header h1 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        main {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about {
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            padding: 0 1rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        section p, section li {
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .steps {
+            list-style: none;
+            counter-reset: step;
+        }
+
+        .steps li {
+            counter-increment: step;
+            padding: 0.5rem 0 0.5rem 2.5rem;
+            position: relative;
+        }
+
+        .steps li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 1.6rem;
+            height: 1.6rem;
+            background: var(--gold-dim);
+            color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .pro-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--bg);
+            background: var(--gold);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-left: 0.25rem;
+            letter-spacing: 0.05em;
+        }
+
+        .features {
+            list-style: none;
+        }
+
+        .features li {
+            padding: 0.4rem 0 0.4rem 1.5rem;
+            position: relative;
+        }
+
+        .features li::before {
+            content: '♪';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.85rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.25rem;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-item .q::before {
+            content: 'Q. ';
+            color: var(--gold);
+        }
+
+        .faq-item .a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding-left: 1.5rem;
+        }
+
+        .faq-item .a::before {
+            content: 'A. ';
+            color: var(--accent-purple);
+            margin-left: -1.5rem;
+        }
+
+        .contact-box {
+            text-align: center;
+        }
+
+        .contact-link {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gold-dim);
+            transition: border-color 0.2s;
+        }
+        .contact-link:hover {
+            border-bottom-color: var(--gold);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 1;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .nav-link {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .nav-link a {
+            color: var(--text-muted);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s;
+        }
+        .nav-link a:hover {
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <div class="grain"></div>
+
+    <header>
+        <div class="app-name">ChordCraft</div>
+        <h1>Support</h1>
+    </header>
+
+    <main>
+        <p class="about">A songwriting app that automatically generates chord progressions from single-note melodies played on your instrument.</p>
+
+        <section>
+            <h2>How to Use</h2>
+            <ol class="steps">
+                <li>Set your BPM and tap Record — a count-in will play before recording begins</li>
+                <li>Play a single-note melody on piano, guitar, or any pitched instrument</li>
+                <li>ChordCraft analyzes your melody and assigns the best-fitting chords</li>
+                <li>Tap any chord to change it to a different option</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Pro Features <span class="pro-badge">PRO</span></h2>
+            <p style="margin-bottom: 0.75rem;">Unlock with a one-time purchase of ChordCraft Pro:</p>
+            <ul class="features">
+                <li>Chord progression templates (Pop, Jazz, Bossa Nova, Blues, Canon, and more)</li>
+                <li>Audio export as AAC / WAV</li>
+                <li>Sheet music PDF export (melody and chord progression as a printable score)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>FAQ</h2>
+
+            <div class="faq-item">
+                <p class="q">Can I use my voice or hum a melody?</p>
+                <p class="a">No. ChordCraft is designed for pitched instruments only, such as piano and guitar. Vocal input is not supported.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="q">Can I play chords or multiple notes at once?</p>
+                <p class="a">No. Only single-note melodies are supported for accurate pitch detection.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="q">How do I restore my Pro purchase on a new device?</p>
+                <p class="a">Go to Settings within the app and tap "Restore Purchases."</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="q">What audio formats are supported for export?</p>
+                <p class="a">AAC (.m4a) and WAV (.wav).</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="q">What is sheet music PDF export?</p>
+                <p class="a">This Pro feature renders your recorded melody and the assigned chord progression as a musical score, which you can export as a PDF file for printing or sharing.</p>
+            </div>
+        </section>
+
+        <section class="contact-box">
+            <h2>Contact</h2>
+            <p>For questions, bug reports, or feedback:</p>
+            <p style="margin-top: 0.5rem;"><a class="contact-link" href="mailto:contact@kouworks.jp">contact@kouworks.jp</a></p>
+        </section>
+
+        <div class="nav-link">
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 <a href="https://kouworks.jp">kouworks</a></p>
+    </footer>
+</body>
+</html>
